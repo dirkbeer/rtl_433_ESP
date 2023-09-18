@@ -184,6 +184,8 @@
 #endif
 
 #ifdef RF_CC1101
+#  undef RF_SX1278
+#  undef RF_SX1276
 #  define RF_MODULE_RECEIVER_GPIO RF_MODULE_GDO0
 #  define STR_MODULE              "CC1101"
 #  if defined(RF_MODULE_SCK) && defined(RF_MODULE_MISO) && \
