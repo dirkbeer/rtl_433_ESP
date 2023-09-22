@@ -17,13 +17,10 @@ char messageBuffer[JSON_MSG_BUFFER];
 
 rtl_433_ESP rf; // use -1 to disable transmitter
 
-int count = 0;
-
 void rtl_433_Callback(char* message) {
   DynamicJsonBuffer jsonBuffer2(JSON_MSG_BUFFER);
   JsonObject& RFrtl_433_ESPdata = jsonBuffer2.parseObject(message);
   logJson(RFrtl_433_ESPdata);
-  count++;
 }
 
 void logJson(JsonObject& jsondata) {
