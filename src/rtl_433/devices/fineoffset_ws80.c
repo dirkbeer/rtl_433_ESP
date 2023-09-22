@@ -106,7 +106,7 @@ static int fineoffset_ws80_decode(r_device *decoder, bitbuffer_t *bitbuffer)
             "flags",            "Flags",            DATA_FORMAT, "%02x", DATA_INT, flags,
             "unknown",          "Unknown",          DATA_COND, unknown != 0x3fff, DATA_INT, unknown,
             "mic",              "Integrity",        DATA_STRING, "CRC",
-            "raw bytes",        "Raw bytes",        DATA_STRING, bytes_to_hex_string(b, 18),       
+            "raw_bytes",        "Raw bytes",        DATA_STRING, bytes_to_hex_string(b, 18),       
             NULL);
     /* clang-format on */
 
@@ -129,6 +129,7 @@ static char const *const output_fields[] = {
         "flags",
         "unknown",
         "mic",
+        "raw_bytes",
         NULL,
 };
 

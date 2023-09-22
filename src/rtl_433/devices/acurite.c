@@ -1053,6 +1053,7 @@ static int acurite_tower_decode(r_device *decoder, bitbuffer_t *bitbuffer, uint8
             "temperature_C",        "Temperature",  DATA_FORMAT, "%.1f C", DATA_DOUBLE, tempc,
             "humidity",             "Humidity",     DATA_COND, humidity != 127, DATA_FORMAT, "%u %%", DATA_INT,    humidity,
             "mic",                  "Integrity",    DATA_STRING, "CHECKSUM",
+            "raw_bytes",            "Raw bytes",    DATA_STRING, bytes_to_hex_string(bb, 7), 
             NULL);
     /* clang-format on */
 

@@ -121,6 +121,7 @@ static int fineoffset_wh45_decode(r_device *decoder, bitbuffer_t *bitbuffer)
             "co2_ppm",          "Carbon Dioxide", DATA_FORMAT, "%i ppm", DATA_INT, co2,
             "ext_power",        "External Power", DATA_INT, ext_power,
             "mic",              "Integrity",    DATA_STRING, "CRC",
+            "raw_bytes",        "Raw bytes",        DATA_STRING, bytes_to_hex_string(b, 15),       
             NULL);
     /* clang-format on */
 
@@ -139,6 +140,7 @@ static char const *const output_fields[] = {
         "co2_ppm",
         "ext_power",
         "mic",
+        "raw_bytes",
         NULL,
 };
 
