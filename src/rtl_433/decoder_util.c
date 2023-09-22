@@ -94,6 +94,30 @@ static char *bitrow_asprint_bits(uint8_t const *bitrow, unsigned bit_len)
     return row_bits;
 }
 
+/// Return a byte string from the given buffer.
+const char* bytes_to_hex_string(const uint8_t *b, unsigned int len) 
+{
+    static char hexString[128];  // Static buffer, size should be max expected (len * 2 + 1)
+
+    // Check if hexString has enough space
+    if (sizeof(hexString) < len * 2 + 1) {
+        // Handle error: not enough space in hexString
+        return NULL;
+    }
+
+    // Convert each byte to its hex representation
+    for (unsigned int i = 0; i < len; ++i) {
+        sprintf(&hexString[i * 2], "%02x", b[i]);
+    }
+
+    // Null-terminate the hex string
+    hexString[len * 2] = '\0';
+
+    return hexString;
+}
+
+
+
 // variadic output functions
 
 void decoder_log(r_device *decoder, int level, char const *func, char const *msg)

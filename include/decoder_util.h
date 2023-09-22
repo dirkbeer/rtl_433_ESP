@@ -40,6 +40,9 @@ void decoder_output_log(r_device *decoder, int level, data_t *data);
 // be terse, a maximum msg length of 60 characters is supported on the decoder_log_ functions
 // e.g. "FoobarCorp-XY3000: unexpected type code %02x"
 
+/// Return a byte string from the given buffer.
+const char* bytes_to_hex_string(const uint8_t *b, unsigned int len);
+
 /// Output a log message.
 void decoder_log(r_device *decoder, int level, char const *func, char const *msg);
 
