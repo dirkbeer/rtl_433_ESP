@@ -88,13 +88,16 @@
 
 // signals shorter than this are ignored in interupt handler
 
-#if OOK_MODULATION
-#  define MINIMUM_PULSE_LENGTH  50
-#  define MINIMUM_SIGNAL_LENGTH 40000
-#else
+// #if OOK_MODULATION
+// #  define MINIMUM_PULSE_LENGTH  50
+// #  define MINIMUM_SIGNAL_LENGTH 40000
+// #else
+// #  define MINIMUM_PULSE_LENGTH  30
+// #  define MINIMUM_SIGNAL_LENGTH 5000
+// #endif
+// to enable switching from OOK to FSK at runtime:
 #  define MINIMUM_PULSE_LENGTH  30
 #  define MINIMUM_SIGNAL_LENGTH 5000
-#endif
 
 // SX127X OOK Reception Floor
 #ifndef OOK_FIXED_THRESHOLD

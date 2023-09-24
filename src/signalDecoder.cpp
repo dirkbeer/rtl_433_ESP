@@ -32,11 +32,13 @@
 #elif defined(RTL_VERBOSE) || defined(RTL_DEBUG)
 #  define rtl_433_Decoder_Stack 30000
 #else
-#  if OOK_MODULATION
-#    define rtl_433_Decoder_Stack 10000
-#  else
+// #  if OOK_MODULATION
+// #    define rtl_433_Decoder_Stack 10000
+// #  else
+// #    define rtl_433_Decoder_Stack 20000
+// #  endif
+// to enable switching from OOK to FSK at runtime:
 #    define rtl_433_Decoder_Stack 20000
-#  endif
 #endif
 
 #define rtl_433_Decoder_Priority 2
