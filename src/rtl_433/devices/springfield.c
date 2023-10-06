@@ -80,7 +80,7 @@ static int springfield_decode(r_device *decoder, bitbuffer_t *bitbuffer)
                 "button",           "Button",       DATA_INT,    button,
 //                "uk1",            "uk1",          DATA_INT,    uk1,
                 "mic",              "Integrity",    DATA_STRING, "CHECKSUM",
-                  "raw_bytes",            "Raw bytes",    DATA_STRING, bytes_to_hex_string(bb, 4), 
+                  "raw_bytes",            "Raw bytes",    DATA_STRING, bytes_to_hex_string(b, 4), 
       
                 NULL);
         /* clang-format on */
